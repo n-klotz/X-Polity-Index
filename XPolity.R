@@ -6,8 +6,11 @@
 ## Version: p4v2013-xpolity
 ##
 ## This script replicates Vreeland's (2008) modification of the polity2 index.
-## See: http://faculty.georgetown.edu/jrv24/polityproblem.html
+##    - http://faculty.georgetown.edu/jrv24/polityproblem.html
 ##
+## All other data is provided by the Polity IV project!
+##    - http://www.systemicpeace.org/polityproject.html
+## 
 
 # set working directory
 setwd("~/Documents/IT/R/Construct XPolity-Scale")
