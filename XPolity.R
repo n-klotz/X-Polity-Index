@@ -1,12 +1,15 @@
 ##
-## Construct X-Polity Scale
+## Construct the X-POLITY Index
 ##
 ## Nicolas Klotz < mail [at] nicolasklotz [dot] de >
 ## Created: 03-AUG-2014
 ## Version: p4v2013-xpolity
 ##
+## This script replicates Vreeland's (2008) modification of the polity2 index.
+## See: http://faculty.georgetown.edu/jrv24/polityproblem.html
+##
 
-# set working directory accordingly
+# set working directory
 setwd("~/Documents/IT/R/Construct XPolity-Scale")
 
 # libraries
@@ -15,10 +18,9 @@ library(car)    # recode()
 
 # load and open polity IV data
 download.file("http://www.systemicpeace.org/inscr/p4v2013.xls", destfile = "p4v2013.xls")
-#p4 <- read.xls("p4v2013.xls", sheet = "1", na.strings = c(-66, -77, -88, NULL, ""))
 p4 <- read.xls("p4v2013.xls", sheet = "1", na.strings = c(NULL, ""))
 
-# recode (relevant) PolityIV components
+# recode (relevant) polity2 components
 # for details, refer to 
 #   * Marshall/Gurr/Jaggers (2013): Polity IV Project Data Users' Manual, p. 14-17
 #   * Vreeland (2008): The Effect of Political Regime on Civil War. Unpacking Anocracy, p. 405
@@ -32,8 +34,6 @@ p4$xropen_xpolity <- 0
 p4$xropen_xpolity[p4$xropen==-66] <- -66
 p4$xropen_xpolity[p4$xropen==-77] <- -77
 p4$xropen_xpolity[p4$xropen==-88] <- -88
-#p4$xropen_xpolity[!(p4$xrcomp_xpolity == 2 | p4$xrcomp_xpolity == 1 ) & !(p4$xrcomp_xpolity == -2)] <- 0
-#p4$xropen_xpolity[p4$xrcomp_xpolity==0 |] <- 0
 p4$xropen_xpolity[(p4$xrcomp_xpolity == 2 | p4$xrcomp_xpolity == 1) & (p4$xropen == 3 | p4$xropen == 4)] <- 1
 p4$xropen_xpolity[p4$xrcomp_xpolity == -2 & (p4$xropen == 1 | p4$xropen == 2)] <- -1
 
