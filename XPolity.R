@@ -13,7 +13,7 @@
 ## 
 
 # set working directory
-setwd("~/Documents/IT/R/Construct XPolity-Scale")
+setwd("~/Documents/IT/R/X-Polity-Index/")
 
 # libraries
 library(gdata)  # read.xls()
