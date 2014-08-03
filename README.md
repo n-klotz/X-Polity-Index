@@ -22,7 +22,7 @@ While Vreeland provides a ready-to-use [*Stata* datafile](http://www9.georgetown
 # Construction of the `X-POLITY` index
 To constuct the `X-POLITY` index, three of the initial five `polity2` components are used (`XCONST`, `XRCOMP` and `XROPEN`). They are recoded according to Marshall / Gurr / Jaggers (2014: 14ff.) and Vreeland (2008: 405). Their sum forms the `X-POLITY` index.
 
-# Codebook
+# Variables
 - `xpolity`: The X-Polity value for every country-year
 - `xconst_xpolity`: Recoded *Executive Constraints* component
 - `xrcomp_xpolity`: Recoded *Competitiveness of Executive Recruitment* component
